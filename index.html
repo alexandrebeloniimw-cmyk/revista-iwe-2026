@@ -1,0 +1,456 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Artigo Teológico Ministerial 2026</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Inter:wght@400;500;600;700&display=swap">
+<style>
+body{margin:0}
+/* Layout: revista em rolagem — capa navy/creme, editorial, números, artigos filtráveis por editoria, agenda das bancas */
+:root{
+  --bg:#fcf6ef; --surface:#ffffff; --ink:#1b2a4e; --text:#2b3245; --muted:#6a7186;
+  --red:#e03c3c; --red-soft:#f8e2dc; --line:#e6ddd2; --band:#1b2a4e; --band-ink:#ffffff; --band-muted:#b5bdd3;
+  --serif:"Lora",Georgia,"Times New Roman",serif; --sans:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--text);font-family:var(--sans);font-size:16px;line-height:1.6}
+.wrap{max-width:1080px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.eyebrow{font-size:12px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--red)}
+h1,h2,h3{font-family:var(--serif);color:var(--ink);text-wrap:balance;margin:0}
+a{color:var(--red)}
+:focus-visible{outline:3px solid var(--red);outline-offset:2px}
+
+/* topo */
+.top{padding-block:28px 0;display:flex;align-items:center;gap:14px}
+.logo{width:64px;height:64px;object-fit:contain;flex:none}
+.flogo{width:96px;height:96px;margin-bottom:28px;display:block}
+.mark{font-family:var(--serif);font-weight:700;font-style:italic;font-size:30px;line-height:1;color:var(--ink)}
+.mark span{color:var(--red)}
+.top b{display:block;font-size:13px;letter-spacing:.06em;color:var(--ink)}
+.top small{color:var(--muted);font-size:13px}
+
+/* capa */
+.cover{position:relative;overflow:hidden}
+.cover .wrap{padding-block:56px 64px;position:relative;z-index:1}
+.ring{position:absolute;right:-180px;top:20px;width:620px;height:620px;border-radius:50%;border:80px solid var(--red-soft);z-index:0}
+.cover h1{font-size:clamp(46px,9vw,92px);line-height:.98;margin-top:14px}
+.cover h1 em{color:var(--red);display:block}
+.rule{width:130px;height:7px;background:var(--red);margin:28px 0}
+.lead{font-family:var(--serif);font-size:clamp(18px,2.3vw,21px);max-width:34em;color:var(--text)}
+
+.band{background:var(--band);color:var(--band-ink);border-top:8px solid var(--red)}
+.band .wrap{padding-block:36px}
+.stats{display:flex;flex-wrap:wrap;gap:20px 56px}
+.stat strong{font-family:var(--serif);font-size:44px;line-height:1;display:block}
+.stat span{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--band-muted)}
+
+/* seções */
+section.block{padding-block:64px 8px}
+.head{display:flex;flex-direction:column;gap:6px;margin-bottom:28px}
+.head h2{font-size:clamp(28px,4vw,38px)}
+.head p{color:var(--muted);max-width:42em;margin:0}
+
+.editorial{display:grid;grid-template-columns:minmax(0,2fr) minmax(0,1fr);gap:40px;align-items:start}
+.editorial .txt{font-family:var(--serif);font-size:18px;max-width:38em}
+.editorial .txt p:first-child::first-letter{float:left;font-size:64px;line-height:.85;padding:6px 10px 0 0;color:var(--red);font-weight:700}
+.sign{text-align:right;font-style:italic;font-weight:600;color:var(--ink)}
+.sign small{display:block;font-family:var(--sans);font-style:normal;font-weight:400;font-size:13px;color:var(--muted)}
+.exp{background:var(--band);color:var(--band-ink);border-radius:12px;padding:24px}
+.exp h3{color:var(--band-ink);font-size:22px;margin-bottom:14px}
+.exp dl{margin:0;display:grid;gap:12px}
+.exp dt{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#ff8f87;font-weight:700}
+.exp dd{margin:0;font-size:15px}
+
+/* números */
+.nums{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+.num{border-top:3px solid var(--red);padding-top:12px}
+.num strong{font-family:var(--serif);font-size:42px;color:var(--ink);line-height:1;display:block;font-variant-numeric:tabular-nums}
+.num span{font-size:14px;color:var(--muted)}
+.two{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:40px;margin-top:40px}
+.lbl{font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--ink);margin-bottom:14px}
+.bars{display:grid;gap:10px}
+.bar{display:grid;grid-template-columns:minmax(0,11em) 1fr 2ch;align-items:center;gap:12px;font-size:14px}
+.bar i{display:block;height:10px;background:var(--red);border-radius:5px}
+.bar b{font-variant-numeric:tabular-nums;text-align:right;color:var(--ink)}
+.verses{display:flex;flex-wrap:wrap;gap:8px}
+.verses span{font-size:13px;padding:4px 10px;border:1px solid var(--line);border-radius:999px;background:var(--surface);color:var(--ink)}
+.note{font-size:13px;color:var(--muted);margin-top:14px}
+
+/* filtros */
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px}
+.filters button{font:600 14px var(--sans);padding:8px 14px;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--ink);cursor:pointer}
+.filters button[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.search{width:100%;max-width:420px;font:15px var(--sans);padding:10px 14px;border-radius:8px;border:1px solid var(--line);background:var(--surface);color:var(--text);margin-bottom:24px}
+.count{font-size:14px;color:var(--muted);margin-bottom:16px}
+
+/* artigos */
+.list{display:grid;gap:14px}
+.art{background:var(--surface);border:1px solid var(--line);border-radius:12px}
+.art summary{list-style:none;cursor:pointer;padding:20px 22px;display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:18px;align-items:start}
+.art summary::-webkit-details-marker{display:none}
+.art .n{font-family:var(--serif);font-weight:700;font-size:28px;color:var(--red);line-height:1;font-variant-numeric:tabular-nums}
+.art .meta{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:600;display:flex;flex-wrap:wrap;gap:4px 14px}
+.art .meta .flag{color:var(--red)}
+.art h3{font-size:19px;line-height:1.3;margin:6px 0 6px}
+.art .by{font-size:14px;color:var(--muted)}
+.art .by b{color:var(--text);font-weight:600}
+.chev{width:28px;height:28px;border-radius:50%;border:1px solid var(--line);display:grid;place-items:center;color:var(--ink);transition:transform .2s}
+.art[open] .chev{transform:rotate(180deg)}
+.body{padding:0 22px 24px;border-top:1px solid var(--line)}
+.facts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:20px 0}
+.facts div{background:var(--bg);border-radius:8px;padding:10px 12px}
+.facts small,.sec small{display:block;font-size:11px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:var(--red)}
+.facts span{font-size:14px;color:var(--ink);font-weight:500}
+.grid2{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:20px 32px}
+.sec p{margin:4px 0 0;font-size:15px}
+.sec.q p{font-family:var(--serif);font-style:italic;color:var(--ink)}
+.pull{margin:22px 0;padding:14px 18px;border-left:4px solid var(--red);font-family:var(--serif);font-size:19px;font-style:italic;color:var(--ink);background:var(--red-soft);border-radius:0 8px 8px 0}
+.refs{margin:8px 0 0;padding-left:20px;font-size:13.5px;color:var(--text)}
+.refs li{margin-bottom:6px}
+.pdf{display:inline-flex;align-items:center;gap:8px;margin-top:20px;padding:11px 18px;border-radius:999px;background:var(--red);color:#fff;font-weight:600;font-size:15px;text-decoration:none}
+.pdf:hover{background:var(--ink)}
+.art .by .pdfmini{font-weight:600;margin-left:6px}
+.empty{padding:32px;text-align:center;color:var(--muted);border:1px dashed var(--line);border-radius:12px}
+
+/* agenda */
+.days{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:24px}
+.day{background:var(--surface);border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.day header{background:var(--band);color:var(--band-ink);padding:18px 20px;display:flex;gap:16px;align-items:center}
+.day .date{font-family:var(--serif);font-size:40px;font-weight:700;line-height:1}
+.day .date small{display:block;font-family:var(--sans);font-size:11px;letter-spacing:.2em;color:#ff8f87}
+.day header p{margin:0;font-size:14px;color:var(--band-muted)}
+.day header p b{color:var(--band-ink);display:block;font-size:15px}
+.day ol{margin:0;padding:8px 20px 16px;list-style:none;counter-reset:a}
+.day li{counter-increment:a;display:grid;grid-template-columns:2.2em minmax(0,1fr);gap:8px;padding:9px 0;border-bottom:1px solid var(--line);font-size:14.5px}
+.day li:last-child{border-bottom:0}
+.day li::before{content:counter(a,decimal-leading-zero);color:var(--red);font-weight:700;font-variant-numeric:tabular-nums}
+.day li small{display:block;color:var(--muted);font-size:13px}
+
+.crit{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:12px;margin-top:28px}
+.crit div{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:14px;text-align:center}
+.crit strong{font-family:var(--serif);font-size:30px;color:var(--ink);display:block;line-height:1.1}
+.crit span{font-size:13px;color:var(--muted)}
+.crit .tot{background:var(--red);border-color:var(--red)}
+.crit .tot strong,.crit .tot span{color:#fff}
+
+footer.end{background:var(--band);color:var(--band-ink);margin-top:72px}
+footer.end .wrap{padding-block:56px 40px}
+footer blockquote{margin:0 0 8px;font-family:var(--serif);font-style:italic;font-size:clamp(20px,3vw,28px);max-width:30em;line-height:1.45}
+footer cite{font-style:normal;font-size:12px;letter-spacing:.2em;color:#ff8f87;font-weight:700}
+footer .bottom{margin-top:40px;padding-top:20px;border-top:1px solid #3a4a72;font-size:13px;color:var(--band-muted);display:flex;flex-wrap:wrap;gap:8px 32px}
+
+@media (max-width:760px){
+  .editorial,.two,.days,.grid2{grid-template-columns:1fr}
+  .nums{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .facts{grid-template-columns:1fr}
+  .crit{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .ring{width:380px;height:380px;border-width:50px;right:-200px}
+  .art summary{gap:12px;padding:16px}
+  .body{padding:0 16px 20px}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+
+<header class="wrap top">
+  <div><b>INSTITUTO WESLEYANO DE EDUCAÇÃO</b><small>Curso Ministerial Teológico · Polo John Wesley – Xerém</small></div>
+</header>
+
+<section class="cover">
+  <div class="ring" aria-hidden="true"></div>
+  <div class="wrap">
+    <div class="eyebrow">Revista · Edição 2026</div>
+    <h1>Artigo Teológico <em>Ministerial</em></h1>
+    <div class="rule"></div>
+    <p class="lead">Os 21 artigos das turmas presencial e semipresencial do Polo John Wesley que chegam à banca examinadora: perguntas da Igreja de hoje respondidas com Bíblia, teologia e pesquisa.</p>
+  </div>
+</section>
+<div class="band"><div class="wrap stats">
+  <div class="stat"><strong>21</strong><span>Artigos</span></div>
+  <div class="stat"><strong>5</strong><span>Editorias</span></div>
+  <div class="stat"><strong>13 e 14/11</strong><span>Defesas</span></div>
+</div></div>
+
+<section class="block wrap" id="editorial">
+  <div class="editorial">
+    <div>
+      <div class="eyebrow">Editorial</div>
+      <h2 style="font-size:clamp(28px,4vw,38px);margin:6px 0 18px">Pesquisa a serviço da Igreja</h2>
+      <div class="txt">
+        <p>Cada artigo desta revista nasceu de uma pergunta real do ministério: o pastor que já não encontra tempo para orar, o líder esgotado pela cultura do desempenho, a família que precisa voltar a ensinar a fé em casa, a igreja que tenta falar a avós e netos no mesmo culto. Ao longo do TCC II, os alunos das turmas presencial e semipresencial transformaram essas inquietações em pesquisa, com fundamento bíblico, diálogo com bons autores e escuta atenta da realidade.</p>
+        <p>Aqui não estão os artigos completos, mas o essencial de cada um: o contexto, o problema, o objetivo, uma síntese do caminho percorrido e as três obras que mais sustentaram a reflexão. É um convite à leitura, um registro da caminhada destas turmas e uma prévia do que será apresentado à banca examinadora em 13 e 14 de novembro.</p>
+      </div>
+      <p class="sign">Direção e Coordenação do IWE Polo John Wesley</p>
+    </div>
+    <aside class="exp">
+      <h3>Expediente</h3>
+      <dl>
+        <div><dt>Diretor do Polo</dt><dd>Pastor e Professor Leonardo Morada</dd></div>
+        <div><dt>Coordenadora Pedagógica</dt><dd>Missionária e Professora Suzana Bulhões</dd></div>
+        <div><dt>Deão</dt><dd>Pastor e Professor Silvério Dias</dd></div>
+        <div><dt>Professor de TCC II</dt><dd>Prof. Alexandre Prado</dd></div>
+      </dl>
+    </aside>
+  </div>
+</section>
+
+<section class="block wrap" id="numeros">
+  <div class="head"><div class="eyebrow">Infográfico</div><h2>A turma em números</h2><p>Um retrato rápido dos 21 artigos: onde estão as pesquisas, como foram feitas e quais textos bíblicos as sustentam.</p></div>
+  <div class="nums">
+    <div class="num"><strong>21</strong><span>artigos apresentados</span></div>
+    <div class="num"><strong>11</strong><span>orientadores</span></div>
+    <div class="num"><strong>3</strong><span>pesquisas com dados de campo</span></div>
+    <div class="num"><strong>103</strong><span>pastores e membros ouvidos em questionários*</span></div>
+  </div>
+  <div class="two">
+    <div>
+      <div class="lbl">Artigos por editoria</div>
+      <div class="bars" id="bars"></div>
+      <div class="lbl" style="margin-top:28px">Como as pesquisas foram feitas</div>
+      <div class="bars">
+        <div class="bar"><span>Bibliográficas e documentais</span><i style="width:100%"></i><b>18</b></div>
+        <div class="bar"><span>Com questionário</span><i style="width:16.7%"></i><b>3</b></div>
+      </div>
+      <p class="note">Questionários: Badra, Taylon e Lucas (este em andamento).</p>
+    </div>
+    <div>
+      <div class="lbl">Textos bíblicos em destaque</div>
+      <div class="verses">
+        <span>Gn 2.1-3</span><span>Êx 20.8-11</span><span>Hb 4.1-11</span><span>Sl 100</span><span>Ne 12</span><span>Is 55.2</span><span>Mt 13.18-23</span><span>At 18.24-28</span><span>Ap 2.1-7</span><span>Ag 1.2-8</span><span>Ed 7.10</span><span>Gl 5.22-23</span><span>Mt 28.19-20</span><span>At 1.8</span><span>Mc 10.42-45</span><span>1Jo 4.1-3</span><span>1Ts 4.3-8</span><span>Rm 12.2</span><span>1Pe 3.15</span><span>2Tm 4.7</span>
+      </div>
+      <p class="note">Passagens centrais analisadas nos artigos, com apoio de comentaristas.</p>
+      <div class="lbl" style="margin-top:28px">Orientadores e número de orientandos</div>
+      <div class="bars" id="orient"></div>
+    </div>
+  </div>
+  <p class="note">* 51 pastores (Badra) e 52 participantes (Taylon). A pesquisa de Lucas prevê 378 participantes; a coleta está em andamento.</p>
+</section>
+
+<section class="block wrap" id="artigos">
+  <div class="head"><div class="eyebrow">Os artigos</div><h2>21 pesquisas, 5 editorias</h2><p>Toque em um artigo para ver contexto, problema, objetivo, síntese e as três referências mais usadas.</p></div>
+  <div class="filters" id="filters" role="group" aria-label="Filtrar por editoria"></div>
+  <input class="search" id="q" type="search" placeholder="Buscar por título, autor ou orientador">
+  <div class="count" id="count"></div>
+  <div class="list" id="list"></div>
+</section>
+
+<section class="block wrap" id="agenda">
+  <div class="head"><div class="eyebrow">Agenda</div><h2>Bancas examinadoras</h2><p>Cada aluno apresenta seu artigo a dois examinadores designados pela Coordenação Pedagógica.</p></div>
+  <div class="days">
+    <div class="day"><header><div class="date">13<small>NOV</small></div><p><b>Presencial · sexta, às 19h</b>Polo John Wesley – Xerém, Duque de Caxias, RJ · 6 alunos</p></header><ol id="d13"></ol></div>
+    <div class="day"><header><div class="date">14<small>NOV</small></div><p><b>Semipresencial · sábado, às 8h</b>Mantiquira, Xerém, Duque de Caxias, RJ · 15 alunos</p></header><ol id="d14"></ol></div>
+  </div>
+  <div class="lbl" style="margin-top:44px">Como a banca avalia</div>
+  <div class="crit">
+    <div><strong>5</strong><span>Relevância do tema</span></div>
+    <div><strong>15</strong><span>Abordagem e profundidade</span></div>
+    <div><strong>5</strong><span>Clareza</span></div>
+    <div><strong>10</strong><span>Coesão</span></div>
+    <div><strong>15</strong><span>Linguagem e defesa oral</span></div>
+    <div class="tot"><strong>50</strong><span>pontos no total</span></div>
+  </div>
+  <p class="note">Cada examinador preenche a sua folha. A defesa oral tem cerca de 10 minutos, seguida das perguntas da banca.</p>
+</section>
+
+<footer class="end"><div class="wrap">
+  <blockquote>“Procura apresentar-te a Deus aprovado, como obreiro que não tem de que se envergonhar, que maneja bem a palavra da verdade.”</blockquote>
+  <cite>2 TIMÓTEO 2.15</cite>
+  <div class="bottom"><span>Instituto Wesleyano de Educação · Curso Ministerial Teológico · Polo John Wesley – Xerém</span><span>Turmas presencial e semipresencial · 2026</span></div>
+</div></footer>
+
+<script>
+const ED={PE:"Pastoral e Espiritualidade",IMH:"Igreja, Missão e História",DE:"Doutrina e Ética",EC:"Educação Cristã",CC:"Culto e Comunicação"};
+const A=[
+{e:"PE",d:14,t:"A cultura do desempenho e a liderança cristã: o papel do descanso bíblico na prevenção do esgotamento ministerial",a:"Ana Gabrielly Oliveira",o:"Prof.ª Nalimar Alves Rodrigues",tema:"Descanso bíblico e prevenção do esgotamento na liderança",area:"Teologia Pastoral",campo:"Liderança e saúde do ministro",
+ctx:"A pressão por desempenho e produtividade, típica da sociedade contemporânea, chegou também aos líderes cristãos e tem contribuído para o esgotamento ministerial.",
+prob:"Em que medida o excesso de estímulo ao desempenho entra em conflito com a ordenança do repouso bíblico, levando a crises de fé e esgotamento mental entre os líderes cristãos?",
+obj:"Analisar o conflito entre o excesso de estímulo ao desempenho na sociedade atual e a ordenança do repouso bíblico, identificando suas consequências na jornada dos líderes evangélicos.",
+s:"Pesquisa qualitativa e bibliográfica, com análise de Gênesis 2.1-3, Êxodo 20.8-11 e Hebreus 4.1-11. O estudo mostra que trabalho e descanso são vocações complementares estabelecidas na criação e que a cultura do desempenho favorece a negligência do descanso pela autoexploração, pela urgência permanente e pela mentalidade de infalibilidade. O descanso aparece como obediência e como forma de resistência à hiperprodutividade.",
+p:"Trabalho e descanso são vocações complementares, estabelecidas desde a criação.",
+r:["CHO, Bernardo. Trabalho, propósito e descanso: a visão bíblica de shalom e o chamado do cristão hoje. São Paulo: Mundo Cristão, 2022. E-book.","HAN, Byung-Chul. Sociedade do cansaço. Petrópolis, RJ: Vozes Nobilis, 2024. E-book.","KELLER, Timothy; ALSDORF, Katherine Leary. Como integrar fé e trabalho: nossa profissão a serviço do Reino de Deus. São Paulo: Vida Nova, 2021. E-book."]},
+{e:"PE",d:14,t:"A centralidade da oração na vida pastoral: uma análise dos desafios contemporâneos ao ministério cristão",a:"Badra Cristina Silva de Lemos Costa",o:"Prof.ª Nalimar Alves Rodrigues",tema:"A oração na vida e no ministério pastoral",area:"Teologia Pastoral",campo:"Espiritualidade do pastor",
+ctx:"O ministério pastoral convive com agendas cheias, outras ocupações profissionais e pouco cuidado espiritual para quem cuida. Nesse cenário, a oração corre o risco de se tornar breve e apenas funcional.",
+prob:"De que maneira as múltiplas demandas ministeriais podem interferir na manutenção de uma vida de oração consistente no ministério pastoral?",
+obj:"Analisar a centralidade da oração na vida pastoral diante dos desafios contemporâneos.",
+s:"Pesquisa bibliográfica, quali-quantitativa e exploratória, com dados do Censo 2022, do Pew Research Center e um questionário aplicado a 51 pastores evangélicos. 78,4% oram diariamente, mas as demandas do ministério reduziram o tempo de oração de 52,9% dos participantes (73,7% entre os que têm outra profissão). As demandas não eliminam a oração, mas a enfraquecem quando não há disciplina e cuidado pastoral.",
+p:"78,4% dos pastores oram todos os dias; 52,9% oram menos por causa das demandas.",
+r:["BOUNDS, E. M. Poder pela oração. Tradução de Marson Guedes. São Paulo: Vida, 2010.","LOPES, Hernandes Dias. De pastor a pastor: princípios para ser um pastor segundo o coração de Deus. 1. ed. São Paulo: Hagnos, 2008.","DOUGLAS, J. D. (ed.). O novo dicionário da Bíblia. 2. ed. São Paulo: Vida Nova, 1997."]},
+{e:"PE",d:14,t:"O domínio próprio como resposta cristã às emoções desordenadas e à compulsão alimentar: uma análise bíblico-teológica",a:"Hisolda Rodrigues Acacio de Oliveira",o:"Prof. Alexandre Prado",tema:"Domínio próprio, emoções e compulsão alimentar",area:"Teologia Pastoral",campo:"Cuidado integral",
+ctx:"Emoções desordenadas e compulsão alimentar desafiam a compreensão cristã do comportamento humano, sobretudo no que diz respeito ao domínio próprio e ao cuidado integral da pessoa.",
+prob:"De que maneira o domínio próprio, compreendido como fruto do Espírito Santo, pode oferecer uma resposta cristã às emoções desordenadas e à compulsão alimentar?",
+obj:"Analisar o significado bíblico-teológico do domínio próprio e sua aplicação às emoções e ao comportamento alimentar no processo de santificação.",
+s:"Pesquisa qualitativa e bibliográfica, na tradição arminiano-wesleyana. O domínio próprio, como fruto do Espírito, envolve transformação interior, discernimento dos desejos e responsabilidade humana, e não apenas esforço individual. O comportamento alimentar tem fatores emocionais, fisiológicos e ambientais, e não se reduz à falta de disciplina espiritual. As disciplinas espirituais e o cuidado do corpo caminham juntos.",
+p:"Domínio próprio é fruto do Espírito, não apenas força de vontade.",
+r:["TOLEDO, Marcio. Saúde não cai do céu: você como protagonista da sua vida. 1. ed. Rio de Janeiro: DOC, 2025.","MARSHALL, Aldrin. Rumo aos 120 anos: como desfrutar a realidade bíblica e científica de uma vida longa e plena. 1. ed. São Paulo: Hagnos, 2024.","SUBIRÁ, Luciano. O cuidado do corpo: sabedoria bíblica para o bem-estar físico e espiritual. 1. ed. São Paulo: Mundo Cristão, 2024."]},
+{e:"PE",d:13,t:"Liderança servidora na cultura digital: fundamentos bíblico-teológicos para o exercício ministerial contemporâneo",a:"Uillian Lima de Queiroz",o:"Prof. Leonardo Morada",tema:"Liderança servidora na cultura digital",area:"Teologia Prática",campo:"Liderança cristã",
+ctx:"A cultura digital mudou a comunicação, a visibilidade e a própria ideia de autoridade. Os líderes da Igreja exercem hoje o ministério diante da velocidade da informação e da exposição pública.",
+prob:"Como a liderança eclesiástica pode utilizar os meios digitais sem comprometer os fundamentos bíblicos que definem sua autoridade, sua finalidade e sua prática ministerial?",
+obj:"Analisar como os fundamentos bíblicos e teológicos da liderança eclesiástica podem ser preservados diante da cultura digital.",
+s:"Pesquisa qualitativa e bibliográfica, de método dedutivo, com análise exegética de Marcos 10.42-45 em diálogo com a Teologia Prática e a sociologia da comunicação. A autoridade ministerial precisa ser desvinculada das métricas de engajamento; o pastoreio relacional deve ser valorizado diante da ilusão de comunidade virtual; e os recursos digitais pedem contextualização crítica. A tecnologia serve à missão quando permanece subordinada a Cristo, ao serviço e ao cuidado comunitário.",
+p:"Autoridade cristã se mede pelo serviço, não pelo engajamento.",
+r:["HARARI, Yuval Noah. Nexus: uma breve história das redes de informação da Idade da Pedra à inteligência artificial. São Paulo: Companhia das Letras, 2024.","HENDRICKS, Howard G. Ensinando para transformar vidas. São Paulo: Betânia, 1991.","PIPER, John. Irmãos, nós não somos profissionais: um apelo aos pastores para que sejam pastores. São Paulo: Fiel, 2009."]},
+{e:"PE",d:13,f:"Artigo em desenvolvimento",t:"A jubilação ministerial desde o início da formação pastoral na tradição wesleyana: fundamentos, desafios e contribuições para a Igreja na atualidade",a:"Jairton",o:"Orientador a confirmar",tema:"Jubilação ministerial e formação pastoral",area:"Teologia Pastoral",campo:"Formação e jubilação",
+ctx:"A jubilação ministerial costuma ser pensada só no fim da trajetória pastoral, como um ato administrativo. Este estudo propõe outra leitura: ela começa a ser preparada no início da formação.",
+prob:"De que maneira compreender a jubilação desde o início da formação pastoral pode contribuir para um ministério de continuidade na tradição wesleyana?",
+obj:"Analisar de que maneira a compreensão da jubilação desde o início da formação pastoral contribui para um ministério de continuidade na tradição wesleyana.",
+s:"Pesquisa bibliográfica e documental, qualitativa, a partir de textos bíblicos sobre formação, trajetória, sucessão e velhice no serviço a Deus (como 2 Timóteo 2.2 e 4.7 e o Salmo 92.14), em diálogo com a tradição wesleyana e as normas da Igreja Metodista Wesleyana. O ministério é lido em quatro movimentos: formar, caminhar, transmitir e continuar. A jubilação aparece como mudança de forma do serviço, e não como fim da vocação.",
+p:"O início já pensando no fim: formar, caminhar, transmitir, continuar.",rl:"Referências do artigo (em construção)",
+r:["IGREJA METODISTA WESLEYANA. Estatuto e Regimento Interno. [Edição e ano a confirmar].","BÍBLIA. Português. Bíblia sagrada. Tradução de João Ferreira de Almeida. Revista e Atualizada. 2. ed. Barueri: Sociedade Bíblica do Brasil, 1993."]},
+{e:"IMH",d:14,t:"A prática social na perspectiva wesleyana: fundamentos teológicos para a missão da Igreja na atualidade",a:"Daniel Liberato Benvindo",o:"Prof. Alexandre Prado",tema:"Prática social wesleyana e missão da Igreja",area:"Teologia Prática",campo:"Missão e ação social",
+ctx:"Na tradição wesleyana, a fé se expressa concretamente no amor a Deus e ao próximo. Diante dos desafios sociais de hoje, a Igreja precisa recuperar os fundamentos da sua ação social.",
+prob:"De que maneira a perspectiva wesleyana pode fundamentar e fortalecer a prática social da Igreja diante dos desafios da sociedade contemporânea?",
+obj:"Analisar os princípios teológicos que fundamentam a prática social na tradição wesleyana.",
+s:"Pesquisa bibliográfica e documental, qualitativa, baseada nas Escrituras, na literatura wesleyana e em documentos da Igreja Metodista. O artigo relaciona graça, santificação, perfeição cristã e obras de misericórdia e revisita as raízes históricas do metodismo. A prática social aparece como expressão da fé e parte da missão, ligada à evangelização, ao discipulado e ao serviço.",
+p:"A prática social é expressão concreta da fé, e não um anexo da missão.",
+r:["CORREIA, Paulo. Fé pública: transformação da realidade a partir da teologia wesleyana. Maringá: Viseu, 2023.","KLAIBER, Walter; MARQUARDT, Manfred. Viver a graça de Deus: um compêndio de teologia wesleyana. Tradução de Helmuth Alfredo Simon. 2. ed. São Bernardo do Campo: Editeo, 2006.","RICHARDS, Lawrence O. Guia do leitor da Bíblia. Tradução de Alexandre Lacuit e Arsênio Novas Netto. 2. ed. Rio de Janeiro: CPAD, 2005."]},
+{e:"IMH",d:14,t:"Cristianismo e cultura: a cultura local como ponte para o anúncio do evangelho e uma perspectiva transformadora",a:"Elisandro Batista da Silva",o:"Prof.ª Rafaela Bertanha",tema:"A cultura local como ponte para o evangelho",area:"Missiologia",campo:"Contextualização",
+ctx:"O evangelho é anunciado em sociedades marcadas por identidades, linguagens e costumes diversos. Por isso é preciso aproximar a mensagem das pessoas sem confundi-la com a cultura de quem a anuncia.",
+prob:"Em vez de simplesmente adaptar-se à cultura ou rejeitá-la, como discernir o que, dentro dela, pode ser afirmado, transformado e ressignificado?",
+obj:"Analisar de que maneira a cultura local pode servir como ponte para a comunicação do evangelho e para a realização da missão cristã.",
+s:"Pesquisa bibliográfica e documental, qualitativa. O estudo trabalha os conceitos de cultura e transculturalidade, os fundamentos bíblicos da contextualização e temas como a cultura digital, o liberalismo teológico e a secularização. A comunicação do evangelho exige conhecer a realidade cultural, discernir à luz das Escrituras e distinguir o essencial da fé dos costumes de cada povo.",
+p:"Afirmar, transformar, ressignificar: o discernimento diante da cultura.",
+r:["HIEBERT, Paul G. O evangelho e a diversidade das culturas: um guia de antropologia missionária. São Paulo: Vida Nova, 1999.","RICHARDS, Lawrence O. Comentário bíblico do professor: um guia didático completo para ajudar no estudo das Escrituras Sagradas do Gênesis ao Apocalipse. Tradução de Valdemar Kroker e Haroldo Janzen. São Paulo: Vida, 2004.","GONZÁLEZ, Justo L. Cultura e evangelho: o lugar da cultura no plano de Deus. São Paulo: Hagnos, 2011."]},
+{e:"IMH",d:13,t:"Missão cristã na era digital: evangelização e espiritualidade",a:"Júlio Cesar dos Santos",o:"Prof. Alexandre Prado",tema:"Evangelização e espiritualidade na era digital",area:"Missiologia",campo:"Mídias digitais",
+ctx:"Redes sociais, plataformas e aplicativos passaram a integrar tanto a evangelização das igrejas quanto a vida devocional dos cristãos. A missão encontrou um novo campo: o digital.",
+prob:"Como as mídias digitais influenciam, ao mesmo tempo, a prática evangelística da igreja e a vida espiritual dos cristãos na atualidade?",
+obj:"Examinar os efeitos da tecnologia digital sobre a prática evangelística da igreja e sobre a espiritualidade cristã, à luz da teologia bíblica da missão.",
+s:"Pesquisa bibliográfica, qualitativa e exploratória, com análise de Mateus 28.19-20, Atos 1.8 e Marcos 16.15. As mídias digitais têm influência ao mesmo tempo expansiva e formativa: ampliam o alcance e os formatos do evangelismo, mas disputam a atenção nas práticas devocionais, limitam a interação apenas on-line e estimulam a busca por aprovação imediata. O uso equilibrado exige intencionalidade e discernimento, a serviço do discipulado e da comunhão.",
+p:"A tela amplia o alcance, mas não substitui a comunhão.",
+r:["REINKE, Tony. 12 maneiras como seu celular está transformando você. Tradução de Maryssa de Oliveira Caetano. Niterói: Concílio, 2020. E-book.","STOTT, John R. W. A missão cristã no mundo. Tradução de Roselene Sant'Anna. 2. ed. São Paulo: Candeia, 2008.","LOYOLA, Manassés. Igreja conectada: entre a virtualidade e a virtuosidade — os desafios da igreja na pós-modernidade. São Paulo: Inspira, 2025."]},
+{e:"IMH",d:14,t:"Revitalização de igrejas no contexto pós-pandemia: fundamentos bíblicos e caminhos para a renovação eclesiástica",a:"Thiago Patrocinio dos Santos",o:"Prof. Luiz Carlos Leite",tema:"Revitalização de igrejas no pós-pandemia",area:"Eclesiologia",campo:"Revitalização de igrejas",
+ctx:"A pandemia impôs às igrejas evangélicas brasileiras desafios institucionais, ministeriais e financeiros e tornou urgente pensar a renovação das comunidades de fé.",
+prob:"Quais princípios bíblicos, fundamentos teológicos e práticas ministeriais podem contribuir para a revitalização de igrejas evangélicas brasileiras no pós-pandemia?",
+obj:"Compreender os princípios bíblicos, os fundamentos teológicos e as práticas ministeriais que contribuem para a revitalização das igrejas no contexto pós-pandemia.",
+s:"Pesquisa bibliográfica com dados de censo e levantamentos, a partir de Apocalipse 2.1-7, Ageu 1.2-8, Neemias 2.17-18 e Esdras 7.10. A revitalização aparece como processo de diagnóstico espiritual, arrependimento, retorno à Palavra e liderança comprometida. O estudo identifica três desafios que se retroalimentam: esgotamento pastoral, desigrejamento e crescimento por transferência de membros.",
+p:"Diagnóstico, arrependimento, retorno à Palavra e liderança.",
+r:["PAES, Carlito. Igrejas que prevalecem: 25 princípios bíblicos para um ministério saudável. São José dos Campos: Inspire, 2022.","RAINER, Thom S. A Igreja Pós-Quarentena: seis desafios e oportunidades urgentes que determinarão o futuro de sua congregação. Rio de Janeiro: CPAD, 2020.","STETZER, Ed; QUEIROZ, Sérgio. Igrejas que transformam o Brasil: sinais de um movimento revolucionário e inspirador. São Paulo: Mundo Cristão, 2017."]},
+{e:"IMH",d:14,t:"História dos avivamentos no Brasil e os desafios contemporâneos para um novo despertar espiritual",a:"Matheus Lima da Silva",o:"Prof. Renato Gaspar",tema:"Avivamentos no Brasil e renovação espiritual hoje",area:"História da Igreja",campo:"Avivamentos",
+ctx:"Os avivamentos e os movimentos de renovação marcaram o cristianismo evangélico brasileiro nos séculos XX e XXI e continuam a inspirar o desejo de um novo despertar.",
+prob:"Qual foi a natureza predominante das transformações produzidas pelos avivamentos e pela pentecostalização no Brasil, e o que essa trajetória ensina para um novo despertar espiritual?",
+obj:"Analisar a história dos avivamentos no Brasil, considerando diferentes tradições e movimentos, e refletir sobre os desafios para um novo despertar espiritual.",
+s:"Pesquisa qualitativa e exploratória, com revisão bibliográfica e análise documental. O artigo compara o metodismo wesleyano, o avivamento galês, a Rua Azusa e a expansão pentecostal no Brasil. As fontes documentam melhor as mudanças religiosas, comunitárias e institucionais do que transformações estruturais amplas. A renovação precisa caminhar com formação continuada, cuidado mútuo, santidade pessoal e social e missão.",
+p:"De Wesley à Rua Azusa: o que os avivamentos ensinam hoje.",
+r:["ARAÚJO, Isael de. História do movimento pentecostal no Brasil: o caminho do pentecostalismo brasileiro até os dias de hoje. Rio de Janeiro: CPAD, 2016.","WILLIAMS, J. Rodman. Teologia sistemática: uma perspectiva pentecostal. Tradução de Sueli Saraiva e Lucy Hiromi Kono Yamakami. São Paulo: Vida, 2011.","CAMPBELL, Marne L. Making Black Los Angeles: class, gender, and community, 1850-1917. Chapel Hill: University of North Carolina Press, 2016."]},
+{e:"DE",d:14,t:"A descentralização de Cristo com o avanço das práticas neopentecostais no Brasil",a:"José Rogério Lima da Silva",o:"Prof. Alexander Pereira",tema:"Centralidade de Cristo diante das práticas neopentecostais",area:"Teologia Sistemática",campo:"Cristologia e eclesiologia",
+ctx:"A expansão do neopentecostalismo no Brasil trouxe uma fé marcada pelo pragmatismo e pela busca de soluções imediatas, com forte presença da Teologia da Prosperidade.",
+prob:"De que maneira o avanço das práticas neopentecostais e da Teologia da Prosperidade promoveu a descentralização de Jesus Cristo no cristianismo brasileiro contemporâneo?",
+obj:"Analisar criticamente o processo de descentralização de Jesus Cristo decorrente da expansão das práticas neopentecostais no Brasil.",
+s:"O estudo mostra como a relação entre fé, riqueza, saúde e sucesso favorece uma religião utilitarista, em que Cristo é buscado pelo que pode oferecer. Em contraste, as Escrituras o apresentam como fundamento da fé e da salvação. A suficiência do sacrifício de Cristo dispensa objetos e práticas como meios de bênção, e a perspectiva arminiano-wesleyana reforça a centralidade de Cristo e o discipulado.",
+p:"Cristo não é meio para a bênção: é o centro da fé.",
+r:["COLLINS, Kenneth J. Teologia de John Wesley: o amor santo e a forma da graça. Tradução de Valéria Cristina Lavor. São Paulo: Vida, 2010.","MARIANO, Ricardo. Neopentecostais: sociologia do novo pentecostalismo no Brasil. 5. ed. São Paulo: Loyola, 1999.","CHAMPLIN, Russell Norman. O Novo Testamento interpretado: versículo por versículo. São Paulo: Hagnos, 2002. v. 1, 4 e 5."]},
+{e:"DE",d:14,t:"Consumismo e contentamento: uma reflexão teológica à luz das Escrituras para a atualidade",a:"Simone G. de Sousa Ribeiro",o:"Prof. Alexandre Prado",tema:"Consumismo e contentamento cristão",area:"Teologia Sistemática",campo:"Ética cristã",
+ctx:"O consumismo influencia valores e a própria ideia de felicidade. Nesse cenário, enfraquecem princípios cristãos como o contentamento, a gratidão e a dependência de Deus.",
+prob:"De que maneira o princípio bíblico do contentamento pode confrontar os efeitos do consumismo moderno na vida do cristão?",
+obj:"Analisar o consumismo moderno à luz das Escrituras, investigando de que forma o contentamento bíblico constitui uma resposta teológica aos desafios da sociedade atual.",
+s:"Pesquisa bibliográfica, qualitativa e de método dedutivo, com Isaías 55.2 como texto central. O consumismo ultrapassa a satisfação das necessidades quando faz da aquisição de bens fonte de realização e segurança. O contentamento bíblico propõe outra relação com o dinheiro e as posses, marcada por prioridades orientadas pela fé, gratidão e solidariedade.",
+p:"Por que gastais o dinheiro naquilo que não é pão? (Is 55.2)",
+r:["KELLER, Timothy. Deuses falsos: as promessas vazias do dinheiro, sexo e poder. São Paulo: Vida Nova, 2010.","FOSTER, Richard J. A liberdade da simplicidade. São Paulo: Vida, 2010.","BLOMBERG, Craig L. Nem pobreza, nem riqueza: as posses segundo a teologia bíblica. São Paulo: Vida, 2024."]},
+{e:"DE",d:13,t:"A defesa cristológica na Primeira Epístola de João: uma resposta às seduções doutrinárias no contexto eclesiástico contemporâneo",a:"Rômulo Neves de Aguiar",o:"Prof. Alexandre Prado",tema:"A defesa da encarnação de Cristo em 1 João",area:"Teologia Sistemática",campo:"Cristologia",
+ctx:"Ensinamentos que relativizam a humanidade de Jesus Cristo e esvaziam os absolutos doutrinários continuam a desafiar a Igreja. A Primeira Epístola de João nasceu justamente para responder a desvios desse tipo.",
+prob:"Quais são as implicações teológicas da negação da humanidade de Jesus Cristo e quais consequências a ausência de um pensamento doutrinário consistente produz na fé e na vida da Igreja?",
+obj:"Compreender a resposta teológica do apóstolo João diante dos ensinamentos contrários às Escrituras e seus desdobramentos para a soteriologia e a maturidade da Igreja.",
+s:"Pesquisa bibliográfica, qualitativa e dedutiva, com comentários exegéticos, teologia sistemática e dados censitários, centrada em 1 João 4.1-3. A negação da plena humanidade de Cristo anula a eficácia da expiação vicária; separar o \"Jesus histórico\" do \"Cristo da fé\" desmorona o núcleo do evangelho; e o analfabetismo doutrinário fragiliza a maturidade da Igreja. O teste cristológico joanino permanece como critério de discernimento diante do relativismo.",
+p:"Confessar o Cristo encarnado continua sendo o teste da fé.",
+r:["MCGRATH, Alister E. Heresia: uma história em defesa da verdade. Tradução de J. C. Siqueira. São Paulo: Hagnos, 2014.","NICHOLS, D. R. O Senhor Jesus Cristo. In: HORTON, S. M. (org.). Teologia sistemática: uma perspectiva pentecostal. Rio de Janeiro: CPAD, 2023.","GRUDEM, Wayne. Teologia sistemática ao alcance de todos. 1. ed. Rio de Janeiro: Thomas Nelson Brasil, 2019."]},
+{e:"DE",d:13,t:"Santificação como processo: a obra do Espírito Santo na vida do crente",a:"Wallace Rodrigues Benvindo",o:"Prof. Alexandre Prado",tema:"Santificação, Espírito Santo e resposta do crente",area:"Teologia Sistemática",campo:"Santificação",
+ctx:"A santificação é dimensão fundamental da vida cristã: um processo contínuo de transformação, no qual o Espírito Santo conduz o crente à conformidade com a vontade de Deus.",
+prob:"Como a obra do Espírito Santo se relaciona com a responsabilidade do crente na santificação, considerando a distinção entre santidade posicional e progressiva na perspectiva wesleyano-arminiana?",
+obj:"Analisar a relação entre a obra do Espírito Santo e a responsabilidade do crente na santificação e suas implicações para a maturidade cristã.",
+s:"Pesquisa bibliográfica, qualitativa e exploratória, com análise de 1 Tessalonicenses 4.3-8 e Gálatas 5.16-25 e dados do IBGE e do Pew Research Center. O estudo distingue a santidade posicional da santificação progressiva e mostra que identificação religiosa não mede transformação espiritual. A santificação é vontade de Deus e envolve a ação do Espírito e a resposta responsável do crente, sem mérito humano: a graça fundamenta e capacita a caminhada.",
+p:"A graça capacita; a obediência responde.",
+r:["OLSON, Roger E. Teologia arminiana: mitos e realidades. Tradução de Wellington Carvalho Mariano. São Paulo: Reflexão, 2013.","STOTT, John. O discípulo radical. Viçosa, MG: Ultimato, 2011.","GILBERTO, Antônio. Pneumatologia: a doutrina do Espírito Santo. In: GILBERTO, Antônio et al. Teologia sistemática pentecostal. 2. ed. Rio de Janeiro: CPAD, 2008."]},
+{e:"DE",d:13,t:"Fé e razão na teologia cristã: fundamentos bíblicos e implicações para a formação do pensamento cristão",a:"Letícia Muriel S. G. Rocha",o:"Prof. Paulo Correia",tema:"Fé e razão na formação do pensamento cristão",area:"Teologia Sistemática",campo:"Fé e razão",
+ctx:"Num tempo de tensões entre crença, secularismo e racionalismo, muitos cristãos têm dificuldade de articular suas convicções de forma consistente. A relação entre fé e razão volta ao centro da reflexão teológica.",
+prob:"De que maneira a teologia cristã compreende a relação entre fé e razão, e como essa relação contribui para a formação do pensamento cristão contemporâneo?",
+obj:"Analisar a relação entre fé e razão na teologia cristã e sua contribuição para a formação do pensamento cristão.",
+s:"Pesquisa bibliográfica, qualitativa e analítica, com textos bíblicos como Romanos 12.2 e 1 Pedro 3.15 e a perspectiva de John Wesley e do Quadrilátero Wesleyano. A razão aparece como dom de Deus e instrumento para interpretar, sistematizar e comunicar a revelação, subordinada às Escrituras. O estudo discute o anti-intelectualismo nas igrejas e conclui que fé e razão são complementares na formação de um pensamento cristão maduro.",
+p:"Uma mente cativa a Cristo e firmada nas Escrituras.",
+r:["CARVALHO, Joedir Fernandes. Doutrina da Bíblia. In: ROMOLO, Carlos Roberto Coutinho (org.). Manual de doutrinas: assim cremos. Duque de Caxias: Centro de Publicações da Igreja Metodista Wesleyana, 2015.","WESLEY, John. Sermão 70: a razão imparcialmente considerada. [S. l.]: Igreja Metodista Livre, [s. d.].","OLSON, Roger. História da teologia cristã: 2000 anos de tradição e reformas. Tradução de Gordon Chown. São Paulo: Vida, 2001."]},
+{e:"EC",d:14,f:"Pesquisa em andamento",t:"O nível educacional teológico dos membros das Igrejas Metodistas Wesleyanas da Primeira Região Eclesiástica: um estudo transversal",a:"Lucas Ramos de Andrade",o:"Prof. Eli Bastos",tema:"Conhecimento teológico dos membros da IMW (1ª Região)",area:"Educação Cristã",campo:"Formação teológica",
+ctx:"O ensino ocupa posição central na preservação e na transmissão da fé: a ortodoxia sustenta a ortopraxia. Conhecer o nível de formação teológica dos membros ajuda a Igreja a planejar seu ensino.",
+prob:"Os membros da Igreja Metodista Wesleyana da 1ª Região possuem conhecimento teológico suficiente à formação cristã? O resultado muda quando os dados são estratificados?",
+obj:"Avaliar o nível de conhecimento teológico dos membros das Igrejas Metodistas Wesleyanas da Primeira Região Eclesiástica.",
+s:"Estudo quantitativo, descritivo e transversal (de prevalência). O questionário eletrônico cobre cinco domínios: Deus, Cristo, Espírito Santo, Igreja e Teologia Wesleyana. A amostra prevista é de 378 participantes analisáveis, com comparação por sexo, idade, escolaridade, renda e tempo de membresia. A coleta de dados está em andamento.",
+p:"Pesquisa de campo em andamento: 5 domínios, 378 participantes previstos.",
+r:["MAITANMI, Stephen O. Reflections on Christian education. Journal of Research on Christian Education, v. 28, n. 2. DOI: https://doi.org/10.1080/10656219.2019.1649401.","STRELOW, Wagner Fernando Kind. Catequese e leitura bíblica no contexto da Patrística. 2020. 164 f. Dissertação (Mestrado em Teologia) – Programa de Pós-Graduação em Teologia, Faculdades EST, São Leopoldo, 2020.","COLLINS, Kenneth J. Teologia de John Wesley: o amor santo e a forma da graça. Tradução de Lena Aranha. 7. impr. Rio de Janeiro: CPAD, 2018. cap. 7."]},
+{e:"EC",d:14,t:"A formação cristã familiar em Suzana Wesley: princípios educativos e desafios para a atualidade",a:"Luiz Claudio Alves Pacheco",o:"Prof. Alexandre Prado",tema:"Educação cristã no lar a partir de Susanna Wesley",area:"Educação Cristã",campo:"Família",
+ctx:"A família tem papel decisivo na transmissão da fé e na formação do caráter, mas enfrenta mudanças culturais, a influência da tecnologia digital e menos tempo de convivência.",
+prob:"De que maneira os princípios de formação cristã de Suzana Wesley podem contribuir para o fortalecimento do discipulado familiar diante dos desafios atuais?",
+obj:"Analisar o papel de Suzana Wesley na formação cristã familiar, destacando os princípios educativos e espirituais de sua prática.",
+s:"Pesquisa bibliográfica, qualitativa e descritiva, com livros, artigos e documentos históricos, como cartas e diários. O artigo apresenta os fundamentos bíblicos e teológicos da formação cristã no lar, discute os desafios contemporâneos à transmissão da fé e analisa os métodos de Suzana Wesley, com disciplina, rotina, ensino individual e oração, como contraponto às dificuldades das famílias de hoje.",
+p:"O lar como primeira escola da fé.",
+r:["LEANDRO, Maria Engrácia. Transformações da família na história do Ocidente. Theologica, Braga, 2. série, v. 41, n. 1.","SENA, Robson Palma Nascimento de. A família cristã e os desafios da pós-modernidade: uma abordagem bíblico-histórica em torno da família cristã. 2016. Monografia (Bacharelado em Teologia) – Faculdade Evangélica do Piauí, Teresina, 2016.","SILVA, Illgner William Souza e. Do sagrado ao secular: a influência da modernidade dos \"sem religião\" no Brasil. 2025. Trabalho de Conclusão de Curso (Licenciatura em Ciências Sociais) – Faculdade Estadual do Piauí, Teresina, 2025."]},
+{e:"EC",d:14,t:"A importância da educação cristã na formação apologética de adolescentes na atualidade",a:"Rodrigo Barros da Silva",o:"Prof. Alexandre Prado",tema:"Formação apologética de adolescentes",area:"Educação Cristã",campo:"Apologética",
+ctx:"A adolescência é marcada pela autonomia, pela reflexão e pelo contato com diferentes visões de mundo. É um momento decisivo para que a fé seja compreendida e não apenas herdada.",
+prob:"De que maneira a educação cristã pode contribuir para a formação apologética de adolescentes, promovendo uma vida intelectual cristã capaz de sustentar a fé diante dos desafios atuais?",
+obj:"Analisar a contribuição da educação cristã para a formação apologética de adolescentes na atualidade.",
+s:"Pesquisa qualitativa, exploratória e bibliográfica, com análise de textos bíblicos sobre ensino, renovação da mente e defesa da fé. A formação apologética não deve ser isolada, mas fazer parte da educação cristã, unindo conhecimento das Escrituras, reflexão, maturidade espiritual e prática. Acolher as perguntas dos adolescentes e preparar quem ensina é responsabilidade da igreja, dos professores e da família.",
+p:"Fé compreendida, e não apenas herdada.",
+r:["WIERSBE, Warren W. Comentário bíblico expositivo. Santo André, SP: Geográfica, 2007. 6 v.","BUENO, Telma. Educação cristã: reflexões e práticas. Rio de Janeiro: CPAD, 2012.","HENDRICKS, Howard. Ensinando para transformar vidas. Venda Nova, MG: Betânia, 1991."]},
+{e:"CC",d:14,t:"Entre tradição e contemporaneidade: o desafio da música na adoração de uma igreja multigeracional",a:"Leonardo de Almeida Santos",o:"Prof. Arnaldo Brassos",tema:"A música na adoração de uma igreja multigeracional",area:"Liturgia e Música",campo:"Liturgia e música",
+ctx:"A música é um dos elementos mais constantes do culto cristão. Sua evolução no século 21, somada à convivência de várias gerações no mesmo culto, exige reflexão teológica.",
+prob:"Em que medida a evolução da música na liturgia pode ser conciliada com a fidelidade aos princípios bíblicos e doutrinários, e como o ministério de música pode envolver as diferentes gerações?",
+obj:"Trazer clareza sobre a função e a aplicabilidade da música na liturgia do culto contemporâneo, considerando o equilíbrio entre as novas expressões musicais e as gerações presentes.",
+s:"Pesquisa bibliográfica, qualitativa e exploratória, com base no Salmo 100, em Neemias 12 e em dados do Censo. A evolução musical e a tecnologia não são, em si, o problema: o que importa é o critério bíblico que orienta o repertório. A igreja sempre foi multigeracional; o novo é a necessidade de uma comunicação diferenciada entre as gerações. O critério é a adoração cristocêntrica, não o gosto de uma faixa etária.",
+p:"O critério é a adoração cristocêntrica, não o estilo ou a preferência.",
+r:["PAULA, Elias Robson de. Explicando as Escrituras: música na adoração. Duque de Caxias: CPIMW, 2015.","BRAVO, Dani; BRAVO, Fábio. Cultura de louvor: ferramentas para um louvor vibrante e bíblico na igreja local. Bragança Paulista: Autor da Fé; Jesus Copy, 2023.","PAES, Carlito. Uma igreja-família: biblicamente apostólica, profética e pastoral. São José dos Campos: Inspire, 2019."]},
+{e:"CC",d:14,t:"Ruídos na comunicação homilética: a eloquência do pregador diante das distrações contemporâneas",a:"Taylon Ferreira de Andrade",o:"Prof. Wallace dos Santos",tema:"A eloquência do pregador diante das distrações",area:"Homilética",campo:"Homilética",
+ctx:"O pregador fala hoje a ouvintes expostos a múltiplas distrações, que geram ruídos capazes de comprometer a recepção da mensagem bíblica.",
+prob:"Como a eloquência do pregador, associada à dependência do Espírito Santo, pode contribuir para superar os ruídos na comunicação homilética?",
+obj:"Analisar a contribuição da eloquência homilética, unida à dependência do Espírito Santo, diante das distrações contemporâneas.",
+s:"Pesquisa exploratória e descritiva, quali-quantitativa, com análise de Êxodo 4.10, Mateus 13.18-23 e Atos 18.24-28 e questionário com 52 participantes. Os ruídos têm origem múltipla, e a clareza foi apontada tanto como problema quanto como fator favorável. A eloquência não elimina os ruídos, mas reduz os que partem do pregador, sem substituir a ação do Espírito.",
+p:"52 ouvintes apontam a clareza como chave da pregação.",
+r:["SOUSA, Severino dos Ramos de. Homilética: a eloquência da pregação. Curitiba: A.D. Santos, 1999.","VARGAS LLOSA, Mario. A civilização do espetáculo: uma radiografia do nosso tempo e da nossa cultura. Tradução de Ivone Benedetti. Rio de Janeiro: Objetiva, 2013.","GILBERTO, Antonio. Teologia sistemática pentecostal. 2. ed. Rio de Janeiro: CPAD, 2008."]},
+{e:"CC",d:14,t:"A comunicação do evangelho em igrejas multigeracionais: desafios para a transmissão da mensagem de Cristo na atualidade",a:"Tomaz Correa da Silva",o:"Prof. Alexandre Prado",tema:"Comunicação do evangelho entre gerações",area:"Comunicação Cristã",campo:"Homilética",
+ctx:"A convivência entre gerações desafia a Igreja a comunicar uma mensagem comum em contextos culturais distintos, sobretudo nas igrejas urbanas.",
+prob:"Como a Igreja pode comunicar o evangelho de forma compreensível às diferentes gerações sem alterar a mensagem de Cristo?",
+obj:"Analisar os desafios das igrejas evangélicas urbanas na comunicação do evangelho entre diferentes gerações, sem alterar o conteúdo da mensagem.",
+s:"Pesquisa bibliográfica e documental, qualitativa, aplicada e exploratória. O artigo distingue conteúdo e forma da mensagem e examina os fundamentos bíblicos da transmissão da fé. As dificuldades envolvem vocabulário religioso, referências culturais, vínculos e oportunidades de participação, e a idade, sozinha, não define a relação com a tradição. A Igreja preserva a fidelidade quando ouve, explica seus termos e escolhe boas formas.",
+p:"Conteúdo fiel, forma compreensível.",
+r:["KELLER, Timothy. Igreja centrada: desenvolvendo em sua cidade um ministério equilibrado e centrado no evangelho. São Paulo: Vida Nova, 2014.","BOSCH, David J. Missão transformadora: mudanças de paradigma na teologia da missão. 2. ed. São Leopoldo: EST; Sinodal, 2007.","MAGALHÃES, Alexander Soares. Os jovens e o pentecostalismo: considerações sobre a identidade da juventude da igreja Assembleia de Deus a partir de um estudo de caso na Baixada Fluminense, RJ. Interseções: Revista de Estudos Interdisciplinares, Rio de Janeiro, v. 20, n. 2. DOI: https://doi.org/10.12957/irei.2018.39012."]}
+];
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const pad=n=>String(n).padStart(2,"0");
+const PDF={"Ana Gabrielly Oliveira": "13gFA0xAn7qSZztQAHRJsIsJkhsmlI9E3", "Badra Cristina Silva de Lemos Costa": "1irtNEADonsuiYmlPRCxeoHYpi1tgcpAb", "Daniel Liberato Benvindo": "13ypeNIybwu-SFKOpNbVGfmYA2wRP-h62", "Elisandro Batista da Silva": "1X7RMOdYC-2friAbxueI23KR9zKV_8iY9", "Hisolda Rodrigues Acacio de Oliveira": "1IPivZGSmm_WT-hq5_RUsmJ5-R_PJcrqO", "Jairton": "1D95ZSSj1IYmnlZg8a6TdJ7emy53dXb0b", "José Rogério Lima da Silva": "1OgMbI3ujjEJWk7wvd01qpZvKlfGc4uFt", "Júlio Cesar dos Santos": "15dEvtXYAn6Z13EGSNgoCgs0D-Baali88", "Leonardo de Almeida Santos": "1YhewHh5UO2sIix3imnxnlF7kVoUMRsdp", "Letícia Muriel S. G. Rocha": "15XHQ9bS7IFjeTxEojX4HnQNxL7GPWpmI", "Lucas Ramos de Andrade": "1sneMOr3UP1UkusY-cpRpJePzOS06PuUl", "Luiz Claudio Alves Pacheco": "1DF-LzHSiPRaXwFSD8lHihaLiDcr2tYZC", "Matheus Lima da Silva": "1Gxygj8zKUGF7H3lo-zPkoOQ5HHRG3QzR", "Rodrigo Barros da Silva": "1Ha0ZblOKgUvOW1Wcz7sptr9Wg_60-E0v", "Rômulo Neves de Aguiar": "17ALKxbq44Iq8ohJNXwz8dk6YODKtsyfM", "Simone G. de Sousa Ribeiro": "11ExHEO4IPWf_b6HLcmumBWMhHyj03qQh", "Taylon Ferreira de Andrade": "14pDqbx_bpYoSgi745OsL_pqHMUrFhalo", "Thiago Patrocinio dos Santos": "11U-HpCzo_zp4blc1pPifv_qYo39mT9DJ", "Tomaz Correa da Silva": "1kxUM_Tb5bixvRKyQowU5ffUrIq_jH7uV", "Uillian Lima de Queiroz": "1JqlDDUb4KssosvxmsnXXC0xZipDqvLc_", "Wallace Rodrigues Benvindo": "1uMksWsHETL-na0NiSuS5x61TbWw01r3w"};
+A.forEach((x,i)=>{x.n=i+1;x.pdf=PDF[x.a]?"https://drive.google.com/file/d/"+PDF[x.a]+"/view":""});
+
+// barras de editoria
+const bars=document.getElementById("bars");
+Object.keys(ED).forEach(k=>{const c=A.filter(x=>x.e===k).length;bars.insertAdjacentHTML("beforeend",`<div class="bar"><span>${ED[k]}</span><i style="width:${c/5*100}%"></i><b>${c}</b></div>`)});
+const OR=[["Prof. Alexandre Prado",9],["Prof.ª Nalimar Alves Rodrigues",2],["Prof. Alexander Pereira",1],["Prof. Arnaldo Brassos",1],["Prof. Eli Bastos",1],["Prof. Leonardo Morada",1],["Prof. Luiz Carlos Leite",1],["Prof. Paulo Correia",1],["Prof. Renato Gaspar",1],["Prof. Wallace dos Santos",1],["Prof.ª Rafaela Bertanha",1]];
+document.getElementById("orient").innerHTML=OR.map(([n,c])=>`<div class="bar"><span>${n}</span><i style="width:${c/9*100}%"></i><b>${c}</b></div>`).join("");
+
+// filtros
+let cur="all";
+const fl=document.getElementById("filters");
+[["all","Todas"],...Object.entries(ED)].forEach(([k,l])=>{const b=document.createElement("button");b.type="button";b.id="f-"+k;b.textContent=l;b.setAttribute("aria-pressed",k===cur);b.onclick=()=>{cur=k;[...fl.children].forEach(c=>c.setAttribute("aria-pressed",c===b));render()};fl.appendChild(b)});
+const q=document.getElementById("q");q.addEventListener("input",render);
+
+function card(x){
+  const flag=x.f?`<span class="flag">${x.f}</span>`:"";
+  return `<details class="art"><summary><span class="n">${pad(x.n)}</span><div><div class="meta"><span>${ED[x.e]}</span><span>Banca ${x.d}/11 · ${x.d===13?"19h":"8h"}</span>${flag}</div><h3>${esc(x.t)}</h3><div class="by"><b>${esc(x.a)}</b> · Orientação: ${esc(x.o)}${x.pdf?` · <span class="pdfmini" style="color:var(--red)">PDF disponível</span>`:""}</div></div><span class="chev" aria-hidden="true">▾</span></summary>
+  <div class="body">${x.pdf?`<a class="pdf" href="${x.pdf}" target="_blank" rel="noopener">Ler o artigo completo (PDF) ↗</a>`:""}<div class="facts"><div><small>Tema</small><span>${esc(x.tema)}</span></div><div><small>Área de estudo</small><span>${esc(x.area)}</span></div><div><small>Campo específico</small><span>${esc(x.campo)}</span></div></div>
+  <div class="grid2"><div class="sec"><small>Contextualização</small><p>${esc(x.ctx)}</p></div><div class="sec q"><small>Problematização</small><p>${esc(x.prob)}</p></div><div class="sec"><small>Objetivo geral</small><p>${esc(x.obj)}</p></div><div class="sec"><small>Síntese do artigo</small><p>${esc(x.s)}</p></div></div>
+  <div class="pull">${esc(x.p)}</div>
+  <div class="sec"><small>${x.rl||"As 3 referências mais usadas"}</small><ol class="refs">${x.r.map(r=>`<li>${esc(r)}</li>`).join("")}</ol></div></div></details>`;
+}
+function render(){
+  const t=q.value.trim().toLowerCase();
+  const items=A.filter(x=>(cur==="all"||x.e===cur)&&(!t||(x.t+" "+x.a+" "+x.o+" "+x.tema).toLowerCase().includes(t)));
+  document.getElementById("count").textContent=items.length===1?"1 artigo":items.length+" artigos";
+  document.getElementById("list").innerHTML=items.length?items.map(card).join(""):`<div class="empty">Nenhum artigo encontrado. Tente outro termo ou escolha “Todas”.</div>`;
+}
+render();
+
+// agenda
+const by=(d)=>A.filter(x=>x.d===d).sort((a,b)=>a.a.localeCompare(b.a,"pt"));
+document.getElementById("d13").innerHTML=by(13).map(x=>`<li><div><b>${esc(x.a)}</b><small>${esc(x.t)} · ${esc(x.o)}</small></div></li>`).join("");
+document.getElementById("d14").innerHTML=by(14).map(x=>`<li><div><b>${esc(x.a)}</b><small>${esc(x.o)}</small></div></li>`).join("");
+</script>
+
+</body>
+</html>

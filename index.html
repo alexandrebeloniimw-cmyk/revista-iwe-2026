@@ -120,6 +120,15 @@ footer .ig{border-color:#ff8f87;color:#ff8f87}
 footer .ig:hover{background:#ff8f87;color:var(--band)}
 .logo{height:56px;width:auto;flex:none}
 .flogo{height:80px;width:auto;display:block;margin-bottom:32px}
+.loc{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.4fr);gap:32px;align-items:stretch}
+.loc .info{display:flex;flex-direction:column;gap:14px}
+.loc address{font-style:normal;font-size:17px;line-height:1.55;color:var(--ink)}
+.loc address b{font-family:var(--serif);font-size:24px;display:block;margin-bottom:6px}
+.maps{align-self:flex-start;display:inline-flex;gap:8px;padding:11px 18px;border-radius:999px;background:var(--red);color:#fff;font-weight:600;text-decoration:none}
+.maps:hover{background:var(--ink)}
+.map{border:1px solid var(--line);border-radius:12px;overflow:hidden;min-height:300px;background:var(--surface)}
+.map iframe{display:block;width:100%;height:100%;min-height:300px;border:0}
+@media (max-width:760px){.loc{grid-template-columns:1fr}}
 .empty{padding:32px;text-align:center;color:var(--muted);border:1px dashed var(--line);border-radius:12px}
 
 /* agenda */
@@ -264,6 +273,18 @@ footer .bottom{margin-top:40px;padding-top:20px;border-top:1px solid #3a4a72;fon
     <div class="tot"><strong>50</strong><span>pontos no total</span></div>
   </div>
   <p class="note">Cada examinador preenche a sua folha. A defesa oral tem cerca de 10 minutos, seguida das perguntas da banca.</p>
+</section>
+
+<section class="block wrap" id="local">
+  <div class="head"><div class="eyebrow">Onde estamos</div><h2>Polo John Wesley – Xerém</h2></div>
+  <div class="loc">
+    <div class="info">
+      <address><b>Centro de Convenções John Wesley</b>Av. Venância, 17 – Xerém<br>Duque de Caxias – RJ · CEP 25245-500</address>
+      <p class="note" style="margin:0">Local da banca presencial, em 13 de novembro, às 19h.</p>
+      <a class="maps" href="https://www.google.com/maps/search/?api=1&amp;query=Centro%20de%20Conven%C3%A7%C3%B5es%20John%20Wesley%2C%20Av.%20Ven%C3%A2ncia%2017%2C%20Xer%C3%A9m&amp;query_place_id=ChIJa82Qm5kNmQARPzM5gKQ4YLU" target="_blank" rel="noopener">Abrir no Google Maps ↗</a>
+    </div>
+    <div class="map"><iframe title="Mapa do Centro de Convenções John Wesley" src="https://maps.google.com/maps?q=-22.5672825,-43.3142762&amp;z=16&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+  </div>
 </section>
 
 <footer class="end"><div class="wrap">

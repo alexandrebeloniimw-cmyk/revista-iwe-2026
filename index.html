@@ -221,7 +221,7 @@ footer .bottom{margin-top:40px;padding-top:20px;border-top:1px solid #3a4a72;fon
   <div class="head"><div class="eyebrow">Infográfico</div><h2>A turma em números</h2><p>Um retrato rápido dos 21 artigos: onde estão as pesquisas, como foram feitas e quais textos bíblicos as sustentam.</p></div>
   <div class="nums">
     <div class="num"><strong>21</strong><span>artigos apresentados</span></div>
-    <div class="num"><strong>11</strong><span>orientadores</span></div>
+    <div class="num"><strong>12</strong><span>orientadores</span></div>
     <div class="num"><strong>3</strong><span>pesquisas com dados de campo</span></div>
     <div class="num"><strong>103</strong><span>pastores e membros ouvidos em questionários*</span></div>
   </div>
@@ -325,7 +325,7 @@ obj:"Analisar como os fundamentos bíblicos e teológicos da liderança eclesiá
 s:"Pesquisa qualitativa e bibliográfica, de método dedutivo, com análise exegética de Marcos 10.42-45 em diálogo com a Teologia Prática e a sociologia da comunicação. A autoridade ministerial precisa ser desvinculada das métricas de engajamento; o pastoreio relacional deve ser valorizado diante da ilusão de comunidade virtual; e os recursos digitais pedem contextualização crítica. A tecnologia serve à missão quando permanece subordinada a Cristo, ao serviço e ao cuidado comunitário.",
 p:"Autoridade cristã se mede pelo serviço, não pelo engajamento.",
 r:["HARARI, Yuval Noah. Nexus: uma breve história das redes de informação da Idade da Pedra à inteligência artificial. São Paulo: Companhia das Letras, 2024.","HENDRICKS, Howard G. Ensinando para transformar vidas. São Paulo: Betânia, 1991.","PIPER, John. Irmãos, nós não somos profissionais: um apelo aos pastores para que sejam pastores. São Paulo: Fiel, 2009."]},
-{e:"PE",d:13,f:"Artigo em desenvolvimento",t:"A jubilação ministerial desde o início da formação pastoral na tradição wesleyana: fundamentos, desafios e contribuições para a Igreja na atualidade",a:"Jairton Gomes de Jesus",o:"Orientador a confirmar",tema:"Jubilação ministerial e formação pastoral",area:"Teologia Pastoral",campo:"Formação e jubilação",
+{e:"PE",d:13,f:"Artigo em desenvolvimento",t:"A jubilação ministerial desde o início da formação pastoral na tradição wesleyana: fundamentos, desafios e contribuições para a Igreja na atualidade",a:"Jairton Gomes de Jesus",o:"Prof.ª Suzana Bulhões",co:"Prof. Alexandre Prado",ol:"Orientadora",tema:"Jubilação ministerial e formação pastoral",area:"Teologia Pastoral",campo:"Formação e jubilação",
 ctx:"A jubilação ministerial costuma ser pensada só no fim da trajetória pastoral, como um ato administrativo. Este estudo propõe outra leitura: ela começa a ser preparada no início da formação.",
 prob:"De que maneira compreender a jubilação desde o início da formação pastoral pode contribuir para um ministério de continuidade na tradição wesleyana?",
 obj:"Analisar de que maneira a compreensão da jubilação desde o início da formação pastoral contribui para um ministério de continuidade na tradição wesleyana.",
@@ -446,6 +446,7 @@ p:"Conteúdo fiel, forma compreensível.",
 r:["KELLER, Timothy. Igreja centrada: desenvolvendo em sua cidade um ministério equilibrado e centrado no evangelho. São Paulo: Vida Nova, 2014.","BOSCH, David J. Missão transformadora: mudanças de paradigma na teologia da missão. 2. ed. São Leopoldo: EST; Sinodal, 2007.","MAGALHÃES, Alexander Soares. Os jovens e o pentecostalismo: considerações sobre a identidade da juventude da igreja Assembleia de Deus a partir de um estudo de caso na Baixada Fluminense, RJ. Interseções: Revista de Estudos Interdisciplinares, Rio de Janeiro, v. 20, n. 2. DOI: https://doi.org/10.12957/irei.2018.39012."]}
 ];
 const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const or=x=>(x.ol||"Orientação")+": "+esc(x.o)+(x.co?" · Coorientador: "+esc(x.co):"");
 const pad=n=>String(n).padStart(2,"0");
 const PDF={"Ana Gabrielly Oliveira": "13gFA0xAn7qSZztQAHRJsIsJkhsmlI9E3", "Badra Cristina Silva de Lemos Costa": "1irtNEADonsuiYmlPRCxeoHYpi1tgcpAb", "Daniel Liberato Benvindo": "13ypeNIybwu-SFKOpNbVGfmYA2wRP-h62", "Elisandro Batista da Silva": "1X7RMOdYC-2friAbxueI23KR9zKV_8iY9", "Hisolda Rodrigues Acacio de Oliveira": "1IPivZGSmm_WT-hq5_RUsmJ5-R_PJcrqO", "Jairton Gomes de Jesus": "1D95ZSSj1IYmnlZg8a6TdJ7emy53dXb0b", "José Rogério Lima da Silva": "1OgMbI3ujjEJWk7wvd01qpZvKlfGc4uFt", "Júlio Cesar dos Santos": "15dEvtXYAn6Z13EGSNgoCgs0D-Baali88", "Leonardo de Almeida Santos": "1YhewHh5UO2sIix3imnxnlF7kVoUMRsdp", "Letícia Muriel S. G. Rocha": "15XHQ9bS7IFjeTxEojX4HnQNxL7GPWpmI", "Lucas Ramos de Andrade": "1sneMOr3UP1UkusY-cpRpJePzOS06PuUl", "Luiz Claudio Alves Pacheco": "1DF-LzHSiPRaXwFSD8lHihaLiDcr2tYZC", "Matheus Lima da Silva": "1Gxygj8zKUGF7H3lo-zPkoOQ5HHRG3QzR", "Rodrigo Barros da Silva": "1Ha0ZblOKgUvOW1Wcz7sptr9Wg_60-E0v", "Rômulo Neves de Aguiar": "17ALKxbq44Iq8ohJNXwz8dk6YODKtsyfM", "Simone G. de Sousa Ribeiro": "11ExHEO4IPWf_b6HLcmumBWMhHyj03qQh", "Taylon Ferreira de Andrade": "14pDqbx_bpYoSgi745OsL_pqHMUrFhalo", "Thiago Patrocinio dos Santos": "11U-HpCzo_zp4blc1pPifv_qYo39mT9DJ", "Tomaz Correa da Silva": "1kxUM_Tb5bixvRKyQowU5ffUrIq_jH7uV", "Uillian Lima de Queiroz": "1JqlDDUb4KssosvxmsnXXC0xZipDqvLc_", "Wallace Rodrigues Benvindo": "1uMksWsHETL-na0NiSuS5x61TbWw01r3w"};
 A.forEach((x,i)=>{x.n=i+1;x.pdf=PDF[x.a]?"https://drive.google.com/file/d/"+PDF[x.a]+"/view":""});
@@ -453,7 +454,7 @@ A.forEach((x,i)=>{x.n=i+1;x.pdf=PDF[x.a]?"https://drive.google.com/file/d/"+PDF[
 // barras de editoria
 const bars=document.getElementById("bars");
 Object.keys(ED).forEach(k=>{const c=A.filter(x=>x.e===k).length;bars.insertAdjacentHTML("beforeend",`<div class="bar"><span>${ED[k]}</span><i style="width:${c/5*100}%"></i><b>${c}</b></div>`)});
-const OR=[["Prof. Alexandre Prado",9],["Prof.ª Nalimar Alves Rodrigues",2],["Prof. Alexander Pereira",1],["Prof. Arnaldo Brassos",1],["Prof. Eli Bastos",1],["Prof. Leonardo Morada",1],["Prof. Luiz Carlos Leite",1],["Prof. Paulo Correia",1],["Prof. Renato Gaspar",1],["Prof. Wallace dos Santos",1],["Prof.ª Rafaela Bertanha",1]];
+const OR=[["Prof. Alexandre Prado",9],["Prof.ª Nalimar Alves Rodrigues",2],["Prof. Alexander Pereira",1],["Prof. Arnaldo Brassos",1],["Prof. Eli Bastos",1],["Prof. Leonardo Morada",1],["Prof. Luiz Carlos Leite",1],["Prof. Paulo Correia",1],["Prof. Renato Gaspar",1],["Prof. Wallace dos Santos",1],["Prof.ª Rafaela Bertanha",1],["Prof.ª Suzana Bulhões",1]];
 document.getElementById("orient").innerHTML=OR.map(([n,c])=>`<div class="bar"><span>${n}</span><i style="width:${c/9*100}%"></i><b>${c}</b></div>`).join("");
 
 // filtros
@@ -464,7 +465,7 @@ const q=document.getElementById("q");q.addEventListener("input",render);
 
 function card(x){
   const flag=x.f?`<span class="flag">${x.f}</span>`:"";
-  return `<details class="art"><summary><span class="n">${pad(x.n)}</span><div><div class="meta"><span>${ED[x.e]}</span><span>Banca ${x.d}/11 · ${x.d===13?"19h":"8h"}</span>${flag}</div><h3>${esc(x.t)}</h3><div class="by"><b>${esc(x.a)}</b> · Orientação: ${esc(x.o)}${x.pdf?` · <span class="pdfmini" style="color:var(--red)">PDF disponível</span>`:""}</div></div><span class="chev" aria-hidden="true">▾</span></summary>
+  return `<details class="art"><summary><span class="n">${pad(x.n)}</span><div><div class="meta"><span>${ED[x.e]}</span><span>Banca ${x.d}/11 · ${x.d===13?"19h":"8h"}</span>${flag}</div><h3>${esc(x.t)}</h3><div class="by"><b>${esc(x.a)}</b> · ${or(x)}${x.pdf?` · <span class="pdfmini" style="color:var(--red)">PDF disponível</span>`:""}</div></div><span class="chev" aria-hidden="true">▾</span></summary>
   <div class="body">${x.pdf?`<a class="pdf" href="${x.pdf}" target="_blank" rel="noopener">Ler o artigo completo (PDF) ↗</a>`:""}<div class="facts"><div><small>Tema</small><span>${esc(x.tema)}</span></div><div><small>Área de estudo</small><span>${esc(x.area)}</span></div><div><small>Campo específico</small><span>${esc(x.campo)}</span></div></div>
   <div class="grid2"><div class="sec"><small>Contextualização</small><p>${esc(x.ctx)}</p></div><div class="sec q"><small>Problematização</small><p>${esc(x.prob)}</p></div><div class="sec"><small>Objetivo geral</small><p>${esc(x.obj)}</p></div><div class="sec"><small>Síntese do artigo</small><p>${esc(x.s)}</p></div></div>
   <div class="pull">${esc(x.p)}</div>
@@ -472,7 +473,7 @@ function card(x){
 }
 function render(){
   const t=q.value.trim().toLowerCase();
-  const items=A.filter(x=>(cur==="all"||x.e===cur)&&(!t||(x.t+" "+x.a+" "+x.o+" "+x.tema).toLowerCase().includes(t)));
+  const items=A.filter(x=>(cur==="all"||x.e===cur)&&(!t||(x.t+" "+x.a+" "+x.o+" "+(x.co||"")+" "+x.tema).toLowerCase().includes(t)));
   document.getElementById("count").textContent=items.length===1?"1 artigo":items.length+" artigos";
   document.getElementById("list").innerHTML=items.length?items.map(card).join(""):`<div class="empty">Nenhum artigo encontrado. Tente outro termo ou escolha “Todas”.</div>`;
 }
@@ -480,8 +481,8 @@ render();
 
 // agenda
 const by=(d)=>A.filter(x=>x.d===d).sort((a,b)=>a.a.localeCompare(b.a,"pt"));
-document.getElementById("d13").innerHTML=by(13).map(x=>`<li><div><b>${esc(x.a)}</b><small>${esc(x.t)} · ${esc(x.o)}</small></div></li>`).join("");
-document.getElementById("d14").innerHTML=by(14).map(x=>`<li><div><b>${esc(x.a)}</b><small>${esc(x.o)}</small></div></li>`).join("");
+document.getElementById("d13").innerHTML=by(13).map(x=>`<li><div><b>${esc(x.a)}</b><small>${esc(x.t)} · ${or(x)}</small></div></li>`).join("");
+document.getElementById("d14").innerHTML=by(14).map(x=>`<li><div><b>${esc(x.a)}</b><small>${or(x)}</small></div></li>`).join("");
 </script>
 
 </body>

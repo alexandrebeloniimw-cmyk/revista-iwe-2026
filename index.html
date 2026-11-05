@@ -157,6 +157,12 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .also p{margin:0;color:var(--ink);font-weight:500}
 .also a{flex:none;padding:10px 18px;border-radius:999px;background:var(--ink);color:var(--bg);font-weight:600;text-decoration:none}
 .also a:hover{background:var(--red);color:#fff}
+.acts{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
+.acts .pdf{margin-top:0}
+.wa{display:inline-flex;align-items:center;gap:8px;padding:11px 18px;border-radius:999px;background:#1f8f4e;color:#fff;font-weight:600;font-size:15px;text-decoration:none}
+.wa:hover{background:#17703c}
+.art{scroll-margin-top:calc(env(safe-area-inset-top,0px) + 72px)}
+.art.hit{box-shadow:0 0 0 3px var(--red)}
 .empty{padding:32px;text-align:center;color:var(--muted);border:1px dashed var(--line);border-radius:12px}
 
 /* agenda */
@@ -504,6 +510,9 @@ r:["KELLER, Timothy. Igreja centrada: desenvolvendo em sua cidade um ministério
 ];
 const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 const or=x=>(x.ol||"Orientação")+": "+esc(x.o)+(x.co?" · Coorientador: "+esc(x.co):"");
+const SITE="https://alexandrebeloniimw-cmyk.github.io/revista-iwe-2026/";
+const WAICON='<svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.4.1-.2 0-.3 0-.5l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.8 11.9 11.9 0 0 0 4.6 4c1.7.7 2.4.8 3.2.7.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.2-.3-.2-.5-.3Z"/></svg>';
+const wa=x=>"https://wa.me/?text="+encodeURIComponent("*"+x.t+"*\n"+x.a+" · "+(x.ol||"Orientação")+": "+x.o+(x.co?" · Coorientador: "+x.co:"")+"\n\nArtigo Teológico Ministerial 2026 · IWE – Polo John Wesley\n\nResumo: "+SITE+"#artigo-"+x.n+(x.pdf?"\nArtigo completo (PDF): "+x.pdf:""));
 const pad=n=>String(n).padStart(2,"0");
 const PDF={"Ana Gabrielly Oliveira": "13gFA0xAn7qSZztQAHRJsIsJkhsmlI9E3", "Badra Cristina Silva de Lemos Costa": "1irtNEADonsuiYmlPRCxeoHYpi1tgcpAb", "Daniel Liberato Benvindo": "13ypeNIybwu-SFKOpNbVGfmYA2wRP-h62", "Elisandro Batista da Silva": "1X7RMOdYC-2friAbxueI23KR9zKV_8iY9", "Hisolda Rodrigues Acacio de Oliveira": "1IPivZGSmm_WT-hq5_RUsmJ5-R_PJcrqO", "Jairton Gomes de Jesus": "1D95ZSSj1IYmnlZg8a6TdJ7emy53dXb0b", "José Rogério Lima da Silva": "1OgMbI3ujjEJWk7wvd01qpZvKlfGc4uFt", "Júlio Cesar dos Santos": "15dEvtXYAn6Z13EGSNgoCgs0D-Baali88", "Leonardo de Almeida Santos": "1YhewHh5UO2sIix3imnxnlF7kVoUMRsdp", "Letícia Muriel S. G. Rocha": "15XHQ9bS7IFjeTxEojX4HnQNxL7GPWpmI", "Lucas Ramos de Andrade": "1sneMOr3UP1UkusY-cpRpJePzOS06PuUl", "Luiz Claudio Alves Pacheco": "1DF-LzHSiPRaXwFSD8lHihaLiDcr2tYZC", "Matheus Lima da Silva": "1Gxygj8zKUGF7H3lo-zPkoOQ5HHRG3QzR", "Rodrigo Barros da Silva": "1Ha0ZblOKgUvOW1Wcz7sptr9Wg_60-E0v", "Rômulo Neves de Aguiar": "17ALKxbq44Iq8ohJNXwz8dk6YODKtsyfM", "Simone G. de Sousa Ribeiro": "11ExHEO4IPWf_b6HLcmumBWMhHyj03qQh", "Taylon Ferreira de Andrade": "14pDqbx_bpYoSgi745OsL_pqHMUrFhalo", "Thiago Patrocinio dos Santos": "11U-HpCzo_zp4blc1pPifv_qYo39mT9DJ", "Tomaz Correa da Silva": "1kxUM_Tb5bixvRKyQowU5ffUrIq_jH7uV", "Uillian Lima de Queiroz": "1JqlDDUb4KssosvxmsnXXC0xZipDqvLc_", "Wallace Rodrigues Benvindo": "1uMksWsHETL-na0NiSuS5x61TbWw01r3w"};
 A.forEach((x,i)=>{x.n=i+1;x.pdf=PDF[x.a]?"https://drive.google.com/file/d/"+PDF[x.a]+"/view":""});
@@ -522,8 +531,8 @@ const q=document.getElementById("q");q.addEventListener("input",render);
 
 function card(x){
   const flag=x.f?`<span class="flag">${x.f}</span>`:"";
-  return `<details class="art"><summary><span class="n">${pad(x.n)}</span><div><div class="meta"><span>${ED[x.e]}</span><span>Banca ${x.d}/11 · ${x.d===13?"19h":"8h"}</span>${flag}</div><h3>${esc(x.t)}</h3><div class="by"><b>${esc(x.a)}</b> · ${or(x)}${x.pdf?` · <span class="pdfmini" style="color:var(--red)">PDF disponível</span>`:""}</div></div><span class="chev" aria-hidden="true">▾</span></summary>
-  <div class="body">${x.pdf?`<a class="pdf" href="${x.pdf}" target="_blank" rel="noopener">Ler o artigo completo (PDF) ↗</a>`:""}<div class="facts"><div><small>Tema</small><span>${esc(x.tema)}</span></div><div><small>Área de estudo</small><span>${esc(x.area)}</span></div><div><small>Campo específico</small><span>${esc(x.campo)}</span></div></div>
+  return `<details class="art" id="artigo-${x.n}"><summary><span class="n">${pad(x.n)}</span><div><div class="meta"><span>${ED[x.e]}</span><span>Banca ${x.d}/11 · ${x.d===13?"19h":"8h"}</span>${flag}</div><h3>${esc(x.t)}</h3><div class="by"><b>${esc(x.a)}</b> · ${or(x)}${x.pdf?` · <span class="pdfmini" style="color:var(--red)">PDF disponível</span>`:""}</div></div><span class="chev" aria-hidden="true">▾</span></summary>
+  <div class="body"><div class="acts">${x.pdf?`<a class="pdf" href="${x.pdf}" target="_blank" rel="noopener">Ler o artigo completo (PDF) ↗</a>`:""}<a class="wa" href="${wa(x)}" target="_blank" rel="noopener" aria-label="Compartilhar este artigo no WhatsApp">${WAICON}Compartilhar no WhatsApp</a></div><div class="facts"><div><small>Tema</small><span>${esc(x.tema)}</span></div><div><small>Área de estudo</small><span>${esc(x.area)}</span></div><div><small>Campo específico</small><span>${esc(x.campo)}</span></div></div>
   <div class="grid2"><div class="sec"><small>Contextualização</small><p>${esc(x.ctx)}</p></div><div class="sec q"><small>Problematização</small><p>${esc(x.prob)}</p></div><div class="sec"><small>Objetivo geral</small><p>${esc(x.obj)}</p></div><div class="sec"><small>Síntese do artigo</small><p>${esc(x.s)}</p></div></div>
   <div class="pull">${esc(x.p)}</div>
   <div class="sec"><small>${x.rl||"As 3 referências mais usadas"}</small><ol class="refs">${x.r.map(r=>`<li>${esc(r)}</li>`).join("")}</ol></div></div></details>`;
@@ -535,6 +544,12 @@ function render(){
   document.getElementById("list").innerHTML=items.length?items.map(card).join(""):`<div class="empty">Nenhum artigo encontrado. Tente outro termo ou escolha “Todas”.</div>`;
 }
 render();
+function openFromHash(){const m=/^#artigo-(\d+)$/.exec(location.hash);if(!m)return;
+  if(cur!=="all"||q.value){cur="all";q.value="";[...fl.children].forEach(c=>c.setAttribute("aria-pressed",c.id==="f-all"));render();}
+  const d=document.getElementById("artigo-"+m[1]);if(!d)return;
+  d.open=true;d.classList.add("hit");setTimeout(()=>d.classList.remove("hit"),2500);
+  const go=()=>d.scrollIntoView({block:"start"});requestAnimationFrame(go);setTimeout(go,400);if(document.readyState!=="complete")window.addEventListener("load",go,{once:true});}
+openFromHash();window.addEventListener("hashchange",openFromHash);
 
 // agenda
 const by=(d)=>A.filter(x=>x.d===d).sort((a,b)=>a.a.localeCompare(b.a,"pt"));

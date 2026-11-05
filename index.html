@@ -129,6 +129,17 @@ footer .ig:hover{background:#ff8f87;color:var(--band)}
 .map{border:1px solid var(--line);border-radius:12px;overflow:hidden;min-height:300px;background:var(--surface)}
 .map iframe{display:block;width:100%;height:100%;min-height:300px;border:0}
 @media (max-width:760px){.loc{grid-template-columns:1fr}}
+.normas{background:var(--band);color:var(--band-ink);border-radius:16px;padding:clamp(24px,4vw,40px);display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:32px;align-items:center}
+.normas h2{color:var(--band-ink);font-size:clamp(26px,3.6vw,34px);margin:8px 0 12px}
+.normas .eyebrow{color:#ff8f87}
+.normas p{margin:0 0 20px;color:var(--band-muted);max-width:34em}
+.normas .go{display:inline-flex;gap:8px;padding:12px 20px;border-radius:999px;background:var(--red);color:#fff;font-weight:600;text-decoration:none}
+.normas .go:hover{background:#fff;color:var(--band)}
+.nk{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.nk div{border:1px solid #3a4a72;border-radius:10px;padding:14px}
+.nk strong{display:block;font-family:var(--serif);font-size:24px;line-height:1.15;color:#fff}
+.nk span{font-size:13.5px;color:var(--band-muted)}
+@media (max-width:760px){.normas{grid-template-columns:1fr}}
 .empty{padding:32px;text-align:center;color:var(--muted);border:1px dashed var(--line);border-radius:12px}
 
 /* agenda */
@@ -284,6 +295,23 @@ footer .bottom{margin-top:40px;padding-top:20px;border-top:1px solid #3a4a72;fon
       <a class="maps" href="https://www.google.com/maps/search/?api=1&amp;query=Centro%20de%20Conven%C3%A7%C3%B5es%20John%20Wesley%2C%20Av.%20Ven%C3%A2ncia%2017%2C%20Xer%C3%A9m&amp;query_place_id=ChIJa82Qm5kNmQARPzM5gKQ4YLU" target="_blank" rel="noopener">Abrir no Google Maps ↗</a>
     </div>
     <div class="map"><iframe title="Mapa do Centro de Convenções John Wesley" src="https://maps.google.com/maps?q=-22.5672825,-43.3142762&amp;z=16&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+  </div>
+</section>
+
+<section class="block wrap" id="normas">
+  <div class="normas">
+    <div>
+      <div class="eyebrow">Normas do curso</div>
+      <h2>Normas do Artigo Teológico Ministerial</h2>
+      <p>Tudo o que foi exigido dos alunos na elaboração e na revisão dos artigos: estrutura, formatação, resumo, citações, referências, pesquisa de campo e os critérios para que o artigo fosse considerado apto para a banca.</p>
+      <a class="go" href="normas.html">Ver as normas completas →</a>
+    </div>
+    <div class="nk">
+      <div><strong>17 a 20</strong><span>páginas, da Introdução às Considerações Finais</span></div>
+      <div><strong>ABNT</strong><span>NBR 6022, 6023, 6028 e 10520</span></div>
+      <div><strong>100 a 250</strong><span>palavras no resumo, com 3 a 5 palavras-chave</span></div>
+      <div><strong>3 seções</strong><span>fundamentar, apresentar e analisar</span></div>
+    </div>
   </div>
 </section>
 

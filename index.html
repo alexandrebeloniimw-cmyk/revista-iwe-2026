@@ -140,6 +140,17 @@ footer .ig:hover{background:#ff8f87;color:var(--band)}
 .nk strong{display:block;font-family:var(--serif);font-size:24px;line-height:1.15;color:#fff}
 .nk span{font-size:13.5px;color:var(--band-muted)}
 @media (max-width:760px){.normas{grid-template-columns:1fr}}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+section[id]{scroll-margin-top:calc(env(safe-area-inset-top,0px) + 72px)}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:60;background:var(--band)}
+.menu{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:var(--band);border-bottom:3px solid var(--red);margin-top:20px}
+.menu .wrap{display:flex;align-items:center;gap:4px;overflow-x:auto;scrollbar-width:none;padding-block:8px}
+.menu .wrap::-webkit-scrollbar{display:none}
+.menu a{flex:none;color:var(--band-ink);text-decoration:none;font-weight:600;font-size:14.5px;padding:9px 14px;border-radius:999px;white-space:nowrap}
+.menu a:hover{background:#2c3d66}
+.menu a.on{background:var(--red);color:#fff}
+.menu .ext{margin-left:auto;color:#ff8f87}
 .empty{padding:32px;text-align:center;color:var(--muted);border:1px dashed var(--line);border-radius:12px}
 
 /* agenda */
@@ -188,6 +199,16 @@ footer .bottom{margin-top:40px;padding-top:20px;border-top:1px solid #3a4a72;fon
   <div><b>INSTITUTO WESLEYANO DE EDUCAÇÃO</b><small>Curso Ministerial Teológico · Polo John Wesley – Centro de Convenções John Wesley, Xerém</small></div>
   <a class="ig" href="https://www.instagram.com/iwe.johnwesley/" target="_blank" rel="noopener">Instagram · @iwe.johnwesley</a>
 </header>
+
+<nav class="menu" aria-label="Menu da revista"><div class="wrap">
+  <a href="#editorial">Editorial</a>
+  <a href="#numeros">A turma em números</a>
+  <a href="#artigos">Artigos</a>
+  <a href="#agenda">Bancas</a>
+  <a href="#local">Onde estamos</a>
+  <a href="#normas">Normas</a>
+  <a class="ext" href="normas.html">Normas completas ↗</a>
+</div></nav>
 
 <section class="cover">
   <div class="ring" aria-hidden="true"></div>
@@ -511,6 +532,13 @@ render();
 const by=(d)=>A.filter(x=>x.d===d).sort((a,b)=>a.a.localeCompare(b.a,"pt"));
 document.getElementById("d13").innerHTML=by(13).map(x=>`<li><div><b>${esc(x.a)}</b><small>${esc(x.t)} · ${or(x)}</small></div></li>`).join("");
 document.getElementById("d14").innerHTML=by(14).map(x=>`<li><div><b>${esc(x.a)}</b><small>${or(x)}</small></div></li>`).join("");
+
+// destaca no menu a seção visível
+(function(){const links=[...document.querySelectorAll('.menu a[href^="#"]')];
+const map=new Map(links.map(a=>[a.getAttribute('href').slice(1),a]));
+if(!('IntersectionObserver' in window))return;
+const io=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){links.forEach(l=>l.classList.remove('on'));const a=map.get(e.target.id);if(a){a.classList.add('on');a.scrollIntoView({block:'nearest',inline:'nearest'});}}})},{rootMargin:'-45% 0px -50% 0px'});
+map.forEach((a,id)=>{const s=document.getElementById(id);if(s)io.observe(s)});})();
 </script>
 
 </body>
